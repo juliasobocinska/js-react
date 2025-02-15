@@ -48,6 +48,15 @@ body {
     z-index: 2;
 }
 
+.moveDown .title {
+    display: none; 
+}
+
+.hidden {
+    opacity: 0; 
+    pointer-events: none; 
+}
+
 .cabbageBottom {
     width: 183px;
     height: 142px;

@@ -25,12 +25,10 @@ const Navigation = ({ userName, onLogout }) => {
       {/* userInfo pojawia się tylko jeśli userName istnieje */}
       {userName && (
         <div className={styles.userInfo}>
-          <span className={styles.userLogo}>U</span>
+          <div className={styles.userLogo}>U</div>
           <span className={styles.userName}>{userName}</span>
-          <span className={styles.line}>|</span>
-          <div onClick={handleLogout} className={styles.logout}>
-            Exit
-          </div>
+          <span className={styles.line}></span>
+          <div onClick={handleLogout} className={styles.logout}>Exit</div>
         </div>
       )}
     </header>

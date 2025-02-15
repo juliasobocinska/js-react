@@ -2,27 +2,25 @@ import React from "react";
 import styles from "./Background.module.css";
 import BackgroundCabbages from "./BackgroundCabbages";
 
-const Background = ({ isLoginPage }) => {
+const Background = ({ isLoginPage, isLoggedIn }) => {
 	return (
 		<>
-			<div className={styles.cabbageBackground}>
+			{/* Górne kapusty, które przesuwają się w dół po zalogowaniu */}
+			<div className={`${styles.cabbageBackground} ${isLoggedIn ? styles.moveDown : ""}`}>
 				{isLoginPage && <BackgroundCabbages />}
-        <div className={styles.title}>
-          <p>Survivors</p>
-        </div>
+				
+				{/* Tytuł "Survivors" tylko na stronie logowania */}
+				{isLoginPage && (
+					<div className={styles.title}>
+						<p>Survivors</p>
+					</div>
+				)}
 			</div>
 
-			{isLoginPage && <div className={styles.cabbage}></div>}
-
-			{!isLoginPage && (
-				<div className={styles.cabbageContainer}>
-					<BackgroundCabbages />
-				</div>
-			)}
-
-			<div className={styles.cabbageBottom}></div>
+			{/* Kapusty na dole - znikają po zalogowaniu */}
+			<div className={`${styles.cabbageBottom} ${isLoggedIn ? styles.hidden : ""}`}></div>
 		</>
-	)
-}
+	);
+};
 
 export default Background;

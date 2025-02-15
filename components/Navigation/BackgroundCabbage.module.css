@@ -25,3 +25,41 @@
 .cabbage12 { top: 19%; left: 45%; }
 .cabbage13 { top: 10%; left: 90%; }
 .cabbage14 { top: 6%; left: 62%; }
+
+
+/* PRZESUNIĘCIE KAPUST W DÓŁ PO ZALOGOWANIU */
+.moveDown .cabbage1, 
+.moveDown .cabbage2, 
+.moveDown .cabbage3, 
+.moveDown .cabbage4, 
+.moveDown .cabbage5, 
+.moveDown .cabbage6, 
+.moveDown .cabbage7, 
+.moveDown .cabbage8, 
+.moveDown .cabbage9, 
+.moveDown .cabbage10, 
+.moveDown .cabbage11, 
+.moveDown .cabbage12, 
+.moveDown .cabbage13, 
+.moveDown .cabbage14 {
+    transform: translateY(300px);
+}
+
+/* KAPUSTY NA DOLE - PRZED ZALOGOWANIEM */
+.cabbageBottom {
+    width: 183px;
+    height: 142px;
+    top: 658px;
+    left: 230px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../public/kapusty.svg');
+    transition: opacity 1s ease-in-out;
+}
+
+/* PO ZALOGOWANIU - KAPUSTY NA DOLE ZNIKAJĄ */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
