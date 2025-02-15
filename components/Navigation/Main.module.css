@@ -1,0 +1,61 @@
+.background {
+    background-color: white;
+    height: 150vh;
+    position: relative; 
+    width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+}
+
+.header {
+    width: 1280px;
+    height: 56px;
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+}
+
+.logo{
+    width: 90px;
+    height: 31px;
+    top: 12px;
+    left: 16px;
+    position: absolute;
+}
+
+.title{
+    width: 377px;
+    height: 139px;
+    color: black;
+    font-size: 102px;
+    font-weight: 900;
+    position: absolute;
+    top: 264px; 
+    left: 229px;
+    z-index: 2;
+}
+
+.userExitContaier{
+
+}
+
+.userLogo{
+
+}
+
+.line{
+
+}
+
+.username{
+
+}
+
+.exit{
+
+}
+
+.logout{
+
+}
