@@ -22,26 +22,25 @@
         text-shadow: 2px 2px 4px #000000;
         text-transform: uppercase; 
         letter-spacing: 2px;
+        z-index: 1000;
     }
 
 .userInfo {
-    position: absolute;
-    width: 170px;
-    height: 36px;
-    top: 10px;
-    left: 1094px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(245, 246, 250, 1);
     padding: 5px 10px;
     border-radius: 8px;
+    z-index: 100;
+    gap: 10px;
 }
 
 .userLogo {
     width: 32px; 
     height: 32px; 
+    color: rgba(82, 85, 95, 1);
     background-color: rgba(245, 246, 250, 1);
+    ;
     font-weight: 700;
     font-size: 12px;
     margin-right: 10px; 
@@ -71,6 +70,7 @@
     text-decoration: underline;
     text-decoration-style: solid;
     cursor: pointer; 
+    color: rgba(82, 85, 95, 1);
 }
 
 .logout:hover {

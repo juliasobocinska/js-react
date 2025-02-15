@@ -3,23 +3,21 @@ import styles from "./BackgroundCabbage.module.css";
 
 export default function BackgroundCabbages({ isLoggedIn }) {
     return (
-        <div className={`${styles.cabbageContainer} ${isLoggedIn ? styles.moveDown : ""}`}>
-            <div className={styles.cabbage1}></div>
-            <div className={styles.cabbage2}></div>
-            <div className={styles.cabbage3}></div>
-            <div className={styles.cabbage4}></div>
-            <div className={styles.cabbage5}></div>
-            <div className={styles.cabbage6}></div>
-            <div className={styles.cabbage7}></div>
-            <div className={styles.cabbage8}></div>
-            <div className={styles.cabbage9}></div>
-            <div className={styles.cabbage10}></div>
-            <div className={styles.cabbage11}></div>
-            <div className={styles.cabbage12}></div>
-            <div className={styles.cabbage13}></div>
-            <div className={styles.cabbage14}></div>
-
-            <div className={styles.cabbages}></div>
-        </div>
-    );
+<div className={styles.cabbageContainer}> 
+    <div className={`${styles.cabbage1} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage2} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage3} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage4} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage5} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage6} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage7} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage8} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage9} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage10} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage11} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage12} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage13} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+    <div className={`${styles.cabbage14} ${isLoggedIn ? styles.moveDown : ""}`}></div>
+ </div>
+ );
 }

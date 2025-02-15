@@ -1,13 +1,14 @@
 import './App.css';
-import Navigation from "../components/Navigation/Navigation"; // Nawigacja
-import Background from "../components/Navigation/Background"; // Twoje tło
+import Navigation from "../components/Navigation/Navigation";
+import Background from "../components/Navigation/Background";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <Navigation />  {/* Możesz usunąć, jeśli nie chcesz nawigacji */}
-      <Background isLoginPage={true} />  {/* Twoje tło */}
+      <Navigation />  
+      {/*<Background isLoggedIn={true} /> */}
+    <Background isLoginPage={true}/>
     </Router>
   );
 }

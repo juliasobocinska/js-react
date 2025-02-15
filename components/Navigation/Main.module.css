@@ -25,11 +25,13 @@
 
 
 .logo{
-    width: 90px;
-    height: 31px;
-    top: 12px;
-    left: 16px;
-    position: absolute;
+    font-family: 'Roboto Mono', monospace; 
+        font-weight: 700;
+        font-size: 28px;
+        color: #000000;
+        text-shadow: 2px 2px 4px #000000;
+        text-transform: uppercase; 
+        letter-spacing: 2px;
 }
 
 .title{

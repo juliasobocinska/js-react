@@ -1,38 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../Navigation/Navigation.module.css"; 
 import { useNavigate } from 'react-router-dom';
 
-const Navigation = ({ userName, onLogout }) => {
-  const navigate = useNavigate();
+const Navigation = ({ userName: propUserName, onLogout }) => {
+    const navigate = useNavigate();
+    const [userName, setUserName] = useState(null);
 
-  // Funkcja obsługująca logikę wylogowania
-  const handleLogout = () => {
-    // Usuwamy dane z localStorage
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("user_id");
+    useEffect(() => {
+        setUserName(propUserName || JSON.parse(localStorage.getItem("user"))?.name || "");
+    }, [propUserName]);
 
-    if (onLogout) onLogout(); 
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        localStorage.removeItem("user_id");
 
-    // Przekierowujemy użytkownika na stronę logowania
+    console.log("You are log out!");
+    if(onLogout ) {
+        onLogout();
+    }
+
     navigate("/login");
-  };
+};
 
-  return (
-    <header className={styles.header}>
-      <div className={styles.logo}>Survivor</div> 
+    return (
+        <header className={styles.header}>
+            <div className={styles.logo}>Survivor</div> 
 
-      {/* userInfo pojawia się tylko jeśli userName istnieje */}
-      {userName && (
-        <div className={styles.userInfo}>
-          <div className={styles.userLogo}>U</div>
-          <span className={styles.userName}>{userName}</span>
-          <span className={styles.line}></span>
-          <div onClick={handleLogout} className={styles.logout}>Exit</div>
-        </div>
-      )}
-    </header>
-  );
+            {userName && (
+                <div className={styles.userInfo}>
+                    <div className={styles.userLogo}>U</div>
+                    <span className={styles.userName}>{userName}</span>
+                    <span className={styles.line}></span>
+                    <div onClick={handleLogout} className={styles.logout}>Exit</div>
+                </div>
+            )}
+        </header>
+    );
 };
 
 export default Navigation;

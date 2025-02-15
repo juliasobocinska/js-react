@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "../Navigation/Main.module.css";
-import Background from "../Background";
+import Background from "../Navigation/Background";
 import Navigation from "../Navigation/Navigation"; 
 
-const Main = ({ isLoginPage }) => {
+const Main = ({ isLoginPage, user, setUser }) => { 
     const navigate = useNavigate();
     const location = useLocation();
     const isHomePage = location.pathname === "/";
-    
-    // Pobieramy użytkownika z localStorage
-    const storedUser = localStorage.getItem("user");
-    const user = storedUser ? JSON.parse(storedUser) : null;
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -22,18 +18,17 @@ const Main = ({ isLoginPage }) => {
     const handleLogout = () => {
         localStorage.removeItem("authToken");
         localStorage.removeItem("user");
+        setUser(null);
         navigate("/login");
     };
 
     return (
-        <div className={styles.background}> {/* Tło pozostaje to samo */}
-            {/* Navigation pokazuje się, jeśli użytkownik jest zalogowany */}
-            {!isHomePage && !isLoginPage && user && (
-                <Navigation 
-                    userName={user.name} 
-                    onLogout={handleLogout} 
-                />
-            )}
+        <div className={styles.background}>
+            {/* Navigation jest teraz zawsze renderowany, ale userInfo jest warunkowe */}
+            <Navigation 
+                userName={user ? user.name : null}
+                onLogout={handleLogout} 
+            />
 
             {/* Tytuł "Survivors" tylko na stronie logowania */}
             {!user && isLoginPage && (
@@ -42,7 +37,6 @@ const Main = ({ isLoginPage }) => {
                 </div>
             )}
 
-            {/* Kapusty zawsze są na stronie, ale po zalogowaniu na dole */}
             <Background isLoggedIn={!!user} />
         </div>
     );
